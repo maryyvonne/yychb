@@ -14,7 +14,7 @@ const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <Navbar dark color='primary' sticky='top' expand='md'>
+        <Navbar dark color='danger' sticky='top' expand='md'>
             <NavbarBrand className='ms-5' href='/'>
                 {/* <img src={logo} alt='Yin Yang Logo' className='float-start' /> */}
                 <h1 className='mt-1'>Yin Yang Custom Home Builders</h1>
@@ -23,12 +23,12 @@ const Header = () => {
             <Collapse isOpen={menuOpen} navbar>
                 <Nav className='ms-auto' navbar>
                     <NavItem>
-                        <NavLink className='nav-link' to='/'>
+                        <NavLink className='nav-link' to='/home'>
                             <i className='fa fa-home fa-lg' /> Home
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link' to='/directory'>
+                        <NavLink className='nav-link' to='/vendorDirectory'>
                             <i className='fa fa-list fa-lg' /> Vendor Directory
                         </NavLink>
                     </NavItem>
