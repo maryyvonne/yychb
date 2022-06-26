@@ -20,21 +20,22 @@ const AddNewTaskForm = ( task, onSaveTask ) => {
   };
   return (
     <>
-    <Button
-      outline
-      onClick={() => setModalOpen(true)}>Add New Task</Button>
-            Make button open modal(done)
-            <Modal isOpen={modalOpen}>
-              <ModalHeader toggle={() => setModalOpen(false)}>Add Task (Create New Task Form)</ModalHeader>
-              <ModalBody>
-                
-                <Formik
-        initialValues={{
-          desc: '',
-          date: undefined,
-          projectCategory: ''
-        }}
-        onSubmit={saveTask}
+      <Button
+        outline
+        onClick={() => setModalOpen(true)}>Add New Task
+      </Button>Make button open modal(done)
+        
+        <Modal isOpen={modalOpen}>
+          <ModalHeader toggle={() => setModalOpen(false)}>Add Task (Create New Task Form)
+          </ModalHeader>
+
+          <ModalBody>
+            <Formik initialValues={{
+              desc: '',
+              date: undefined,
+              projectCategory: ''
+              }}
+              onSubmit={saveTask}
         >
         <Form>
           <FormGroup>
@@ -77,7 +78,7 @@ const AddNewTaskForm = ( task, onSaveTask ) => {
             
           </FormGroup>
         <div className="text-right">
-          <Button outline type='submit' className="button dark" color='danger' onClick={saveTask}>
+          <Button outline type='submit' className="button dark" color='danger' toggle={() => setModalOpen(false)}>
             Save
           </Button>
         </div>
