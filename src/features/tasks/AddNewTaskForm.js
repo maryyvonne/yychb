@@ -1,9 +1,34 @@
 import { useState } from "react";
 import { Button, Form, FormGroup, Label, Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { ErrorMessage, Formik, Field,  } from 'formik';
-const AddTaskForm = ( task, onSaveTask ) => {
+
+const AddNewTaskForm = ( task, onSaveTask ) => {
+  const [ modalOpen, setModalOpen ] = useState(false);
+  
+  const [desc, setDesc] = useState("");
+  const [date, setDate] = useState("");
+  const [projectCategory, setProjectCategory] = useState("");
+
+  const saveTask = (e) => {
+    e.preventDefault();
+    onSaveTask({ desc: desc, date: date, projectCategory : projectCategory });
+
+    setDesc("");
+    setDate("");
+    setProjectCategory('');
+    setModalOpen(false);
+  };
   return (
-    <Formik
+    <>
+    <Button
+      outline
+      onClick={() => setModalOpen(true)}>Add New Task</Button>
+            Make button open modal(done)
+            <Modal isOpen={modalOpen}>
+              <ModalHeader toggle={() => setModalOpen(false)}>Add Task (Create New Task Form)</ModalHeader>
+              <ModalBody>
+                
+                <Formik
         initialValues={{
           desc: '',
           date: undefined,
@@ -52,14 +77,18 @@ const AddTaskForm = ( task, onSaveTask ) => {
             
           </FormGroup>
         <div className="text-right">
-          <Button outline type='submit' className="button dark" color='danger'>
+          <Button outline type='submit' className="button dark" color='danger' onClick={saveTask}>
             Save
           </Button>
         </div>
         </Form>
       </Formik>
-      
+              </ModalBody>
+            </Modal>
+    
+      </>  
   )
+  
 }
 
-export default AddTaskForm;
+export default AddNewTaskForm;

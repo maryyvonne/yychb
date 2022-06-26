@@ -1,7 +1,8 @@
 import { Container,  } from '@material-ui/core';
 import { Row, Col, Card, CardBody, CardHeader } from 'reactstrap';
 import React from 'react'
-import Tasks from '../../features/tasks/Tasks';
+import TasksList from '../../features/tasks/TasksList';
+
 
 
 
@@ -36,7 +37,7 @@ export const Dashboard = () => {
           <Card>
             <CardHeader>Task List</CardHeader>
             <CardBody>
-              
+              <TasksList />
             </CardBody>
           </Card>
           </Col>
