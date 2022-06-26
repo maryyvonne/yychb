@@ -15,12 +15,10 @@ const VendorDirectoryPage = () => {
         <Row>
           
           <Outlet />
-          <SubHeader />
+          <SubHeader current='Vendor Directory'/>
         </Row>
         <Row>
-          <div>
-            <h1>Vendor Directory Page</h1>
-          </div>
+          
         </Row>
       </Container>
     </div>

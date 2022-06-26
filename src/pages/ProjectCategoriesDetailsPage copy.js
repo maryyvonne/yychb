@@ -8,9 +8,9 @@ const ProjectCategoriesDetailsPage = () => {
   const projectCategoryName = selectProjectCategoryById(projectCategoryId);
   return (
     <Container>
-      <SubHeader />
+      <SubHeader current={projectCategoryName.projectCategory} detail={true} />
       <Row>
-        <ProjectCategoryDetails />
+        <ProjectCategoryDetails projectCategory={projectCategory} />
         
       </Row>
     </Container>

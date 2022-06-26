@@ -1,6 +1,7 @@
 import { Container,  } from '@material-ui/core';
 import { Row, Col, Card, CardBody, CardHeader } from 'reactstrap';
 import React from 'react'
+import Tasks from '../../features/tasks/Tasks';
 
 
 
@@ -9,13 +10,13 @@ export const Dashboard = () => {
     <div>Dashboard
       <Container>
         <Row>
-          <Col>
+          <Col sm-6>
           <Card>
             <CardHeader>Project Completion Graph</CardHeader>
             <CardBody></CardBody>
           </Card>
           </Col>
-          <Col>
+          <Col sm-6>
           <Card>
             <CardHeader>Finance Graph</CardHeader>
             <CardBody></CardBody>
@@ -23,7 +24,7 @@ export const Dashboard = () => {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col sm-6>
           <Card>
             <CardHeader>Project Timeline</CardHeader>
             <CardBody>
@@ -31,12 +32,11 @@ export const Dashboard = () => {
             </CardBody>
           </Card>
           </Col>
-          <Col>
+          <Col sm-6>
           <Card>
             <CardHeader>Task List</CardHeader>
-            <CardBody>To do list:<br/>
-            1. Create way to push items to do list<br/>
-            2. Render to do list<br/>
+            <CardBody>
+              
             </CardBody>
           </Card>
           </Col>

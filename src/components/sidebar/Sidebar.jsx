@@ -5,8 +5,8 @@ import './sidebar.scss';
 const sidebarNavItems = [
     {
         display: 'Dashboard',
-        icon: <i className='bx bx-home'></i>,
-        to: '/',
+        icon: <i className='bx bx-dashboard'></i>,
+        to: '/dashboard',
         section: ''
     },
     {
@@ -16,19 +16,25 @@ const sidebarNavItems = [
         section: 'started'
     },
     {
+        display: 'Tasks',
+        icon: <i className='bx bx-calendar'></i>,
+        to: '/tasks',
+        section: ''
+    },
+    {
         display: 'Vendors',
         icon: <i className='bx bx-calendar'></i>,
         to: '/vendorDirectory',
         section: 'calendar'
     },
     {
-        display: 'User',
+        display: 'Accounts Payable',
         icon: <i className='bx bx-user'></i>,
         to: '/user',
         section: 'user'
     },
     {
-        display: 'Orders',
+        display: 'Bidding',
         icon: <i className='bx bx-receipt'></i>,
         to: '/order',
         section: 'order'
