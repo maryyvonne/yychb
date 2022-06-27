@@ -1,19 +1,43 @@
-import { Button, Col, Container,  Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
-import React from 'react'
+import { Button, Col, Container, Row } from 'reactstrap';
+import { useState, useEffect } from 'react';
 import Sidebar from '../components/sidebar/Sidebar'
 import { Outlet } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faPlus, faCog, faCheck, faSearch, faSlidersH } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faCheck, faSearch, faSlidersH } from '@fortawesome/free-solid-svg-icons';
 import SubHeader from '../components/SubHeader'
-import TasksList from '../features/tasks/TasksList'
-import { useState } from 'react';
+
+
 import AddNewTaskForm from '../features/tasks/AddNewTaskForm';
 import { ButtonGroup, Card, Dropdown, InputGroup, Form, Table } from "@themesberg/react-bootstrap";
 import { TASKITEMS } from '../app/shared/TASKITEMS';
+import Tasks from '../features/tasks/Tasks';
+import { selectAllTasks } from '../features/tasks/tasksSlice';
 
 
 const TasklistPage = () => {
+  const [tasks, setTasks] = useState(selectAllTasks()); 
+
+  const onTglStatus = (task) => {
+    console.log("completing task");
+    setTasks(
+      tasks.map((chkTask) => {
+        chkTask.complete =
+          task.id === chkTask.id ? !chkTask.complete : chkTask.complete;
+        return chkTask;
+      })
+    );
+  };
   
+  const [showTaskEdit, setShowTaskEdit] = useState(false);
+
+  const onSaveTask = ({ desc, date, projectCategory }) => {
+    console.log("saving tasks");
+    setTasks([
+      { desc: desc, date: date, id: Date.now(), projectCategory : projectCategory, complete: false },
+      ...tasks,
+    ]);
+  };
+
   return (
     <div 
       className="d-lg-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4"
@@ -93,40 +117,8 @@ const TasklistPage = () => {
           
         </Row>
 
-        
-
         <Row>
-          <Card border="light" className="table-wrapper table-responsive shadow-sm">
-            <Card.Body>
-              <Table hover className="user-table align-items-center">
-                <thead>
-                  <tr>
-                    <th className="border-bottom">Task</th>
-                    <th className="border-bottom">Project Category</th>
-                    <th className="border-bottom">Status
-                          </th>
-                    <th className="border-bottom">Task Created at</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {TASKITEMS.map(t=>(
-                    <tr key={t.id}>
-                        <td>
-                          <Card.Link className="d-flex align-items-center">
-                            <div className="d-block">
-                              <span className="fw-bold">{t.desc}</span>
-                            </div>
-                          </Card.Link>
-                        </td>
-                        <td><span className="fw-normal"><div className="small text-gray">{t.projectCategory}</div></span></td>
-                        <td><span className="fw-normal"><div className="small text-gray">{t.status}</div></span></td>
-                        <td><span className="fw-normal">{t.date}</span></td>
-                    </tr>
-                  ))} 
-                </tbody>
-              </Table>
-            </Card.Body>
-          </Card>
+          <Tasks />
         </Row>
         <Row>
           

@@ -1,24 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, Form, FormGroup, Label, Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { ErrorMessage, Formik, Field,  } from 'formik';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPlus} from '@fortawesome/free-solid-svg-icons';
+import { TASKITEMS } from "../../app/shared/TASKITEMS";
+import { selectAllTasks } from "./tasksSlice";
 const AddNewTaskForm = ( task, onSaveTask ) => {
   const [ modalOpen, setModalOpen ] = useState(false);
-  
+  const  [ tasks, setTasks ]  = useState([{TASKITEMS}]);
   const [desc, setDesc] = useState("");
   const [date, setDate] = useState("");
   const [projectCategory, setProjectCategory] = useState("");
-
+ 
   const saveTask = (e) => {
     e.preventDefault();
-    onSaveTask({ desc: desc, date: date, projectCategory : projectCategory });
+    onSaveTask([{ desc: desc, date: date, projectCategory : projectCategory, complete: false }]);
 
     setDesc("");
     setDate("");
     setProjectCategory('');
     setModalOpen(false);
-  };
+  }
   return (
     <>
       <Button
@@ -93,6 +95,6 @@ const AddNewTaskForm = ( task, onSaveTask ) => {
       </>  
   )
   
-}
-
+            }
+  
 export default AddNewTaskForm;
