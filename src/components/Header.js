@@ -28,18 +28,23 @@ const Header = () => {
                         </NavLink>
                     </NavItem>
                     <NavItem>
+                        <NavLink className='nav-link' to='/dashboard'>
+                            <i className='fa fa-dashboard fa-lg' /> Dashboard
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
                         <NavLink className='nav-link' to='/vendorDirectory'>
-                            <i className='fa fa-list fa-lg' /> Vendor Directory
+                            <i className='fa fa-address-card fa-lg' /> Vendor Directory
                         </NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink className='nav-link' to='/buildingChecklist'>
-                            <i className='fa fa-info fa-lg' /> Building Checklist
+                            <i className='fa fa-list fa-lg' /> Building Checklist
                         </NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink className='nav-link' to='/bidding'>
-                            <i className='fa fa-address-card fa-lg' /> Bidding
+                        <i className="fa fa-file"/>Bidding
                         </NavLink>
                     </NavItem>
                 </Nav>

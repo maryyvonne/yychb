@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Button, Form, FormGroup, Label, Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { ErrorMessage, Formik, Field,  } from 'formik';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faPlus} from '@fortawesome/free-solid-svg-icons';
 const AddNewTaskForm = ( task, onSaveTask ) => {
   const [ modalOpen, setModalOpen ] = useState(false);
   
@@ -22,8 +23,10 @@ const AddNewTaskForm = ( task, onSaveTask ) => {
     <>
       <Button
         outline
-        onClick={() => setModalOpen(true)}>Add New Task
-      </Button>Make button open modal(done)
+        onClick={() => setModalOpen(true)}>
+          <FontAwesomeIcon icon={faPlus} className="me-2" />
+          Add New Task
+      </Button>
         
         <Modal isOpen={modalOpen}>
           <ModalHeader toggle={() => setModalOpen(false)}>Add Task (Create New Task Form)
