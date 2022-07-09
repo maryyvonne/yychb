@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import { Col, Row, } from 'reactstrap';
 import TaskCard from './TaskCard';
+import Tasks from './Tasks';
 import { selectAllTasks } from './tasksSlice';
 
 
@@ -10,9 +12,9 @@ const TasksList = () => {
     <Row className='ms-auto'>
       {tasks.map((task) => {
         return (
-          <Col md='5' className='ms-auto' key={task.desc}>
-            <TaskCard task={task}/>
-          </Col>
+          <Link to={task} className='ms-auto' key={task.desc}>
+            <>{task.desc}</>
+          </Link>
         );
       })}
     </Row>

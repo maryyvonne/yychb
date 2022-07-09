@@ -8,3 +8,7 @@ export const selectAllTasks = () => {
 // Select tasks by category
 
 // if task category equals project category, then push it to the category tasks array (categoryTasks)
+
+export const selectTasksByCategoryId = (projectCategory) => {
+  return TASKITEMS.filter((task) => task.projectCategory === parseInt(projectCategory))
+}

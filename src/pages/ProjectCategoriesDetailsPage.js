@@ -1,19 +1,32 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { Outlet, useParams } from 'react-router-dom'
+import { Container, Row } from 'reactstrap';
+import Sidebar from '../components/sidebar/Sidebar';
+import SubHeader from '../components/SubHeader';
 import { selectProjectCategoryById } from '../features/projectCategories/projectCategoriesSlice';
 import ProjectCategoryDetails from '../features/projectCategories/ProjectCategoryDetails';
 
 const ProjectCategoriesDetailsPage = () => {
-  const { projectCategoryId } = useParams();
-  const projectCategoryName = selectProjectCategoryById(projectCategoryId);
+  const { categoryId } = useParams();
+  const category = useSelector(selectProjectCategoryById(categoryId));
   return (
-    <Container>
-      <SubHeader />
-      <Row>
-        <ProjectCategoryDetails />
+    <>
+      
+      
+        <Row>
+          
+          <Outlet />
+          <SubHeader current={category.name} detail={true}/>
+        </Row>
+        <Row>
+          <ProjectCategoryDetails category={category}/>
+    
+        </Row>
         
-      </Row>
-    </Container>
+      
+      </>
+    
   )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ProjectCategoryTab = ({ projectCategory }) => {
-  const { projectCategoryId, category } = projectCategory;
+  const { id, category } = projectCategory;
   return (
     <div>ProjectCategoryTab</div>
   )

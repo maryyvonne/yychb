@@ -5,8 +5,6 @@ import { Outlet } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog, faCheck, faSearch, faSlidersH } from '@fortawesome/free-solid-svg-icons';
 import SubHeader from '../components/SubHeader'
-
-
 import AddNewTaskForm from '../features/tasks/AddNewTaskForm';
 import { ButtonGroup, Card, Dropdown, InputGroup, Form, Table } from "@themesberg/react-bootstrap";
 import { TASKITEMS } from '../app/shared/TASKITEMS';
@@ -39,14 +37,10 @@ const TasklistPage = () => {
   };
 
   return (
-    <div 
-      className="d-lg-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4"
-        style={{
-        padding: '50px 0px 0px 370px'
-      }}>
-      <Sidebar />
+    <div>
+      
       <Container>
-
+      
         <Row>
           <Outlet />
           <SubHeader current='Task List' />
@@ -118,7 +112,7 @@ const TasklistPage = () => {
         </Row>
 
         <Row>
-          <Tasks />
+          <Tasks tasks={tasks} onTglStatus={onTglStatus}></Tasks>
         </Row>
         <Row>
           
@@ -126,7 +120,7 @@ const TasklistPage = () => {
         
       </Container>
 
-    </div>
+    </div> 
   )
 }
 

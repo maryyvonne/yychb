@@ -8,8 +8,8 @@ import TasksList from '../../features/tasks/TasksList';
 
 export const Dashboard = () => {
   return (
-    <div>Dashboard
-      <Container>
+    <div>
+      
         <Row>
           <Col sm-6>
           <Card>
@@ -42,7 +42,7 @@ export const Dashboard = () => {
           </Card>
           </Col>
         </Row>
-      </Container>
+      
     </div>
   )
 }

@@ -1,16 +1,21 @@
+import { useSelector } from 'react-redux';
 import { Card, CardImg, CardText, CardBody, Col, CardHeader } from 'reactstrap';
+import { selectProjectCategoryById } from './projectCategoriesSlice';
+import ProjectCategoryTab from './ProjectCategoryTab';
 
 
 
-const ProjectCategoryDetails = ({ projectCategory }) => {
-  const { projectCategoryId, category } = projectCategory;
-  
+const ProjectCategoryDetails = ({ category }) => {
+  const { id, name, categoryTasks } = category;
+  const tasks = useSelector(selectProjectCategoryById(category))
   return (
     <Col md='5' className='m-1'>
             <Card>
-                <CardHeader>{category}</CardHeader>
+                <CardHeader>Tasks</CardHeader>
                 <CardBody>
-                    <CardText>blah blah blah</CardText>
+                    <CardText>
+                      
+                    </CardText>
                 </CardBody>
             </Card>
         </Col>

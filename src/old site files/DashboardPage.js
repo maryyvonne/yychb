@@ -7,21 +7,19 @@ import SubHeader from '../components/SubHeader';
 const DashboardPage
  = () => {
   return (
-  <div style={{
-    padding: '50px 0px 0px 370px'
-  }}>
-    <Sidebar />
+  <>
+    
     <Container>
       <Row>
         
         <Outlet />
-        <SubHeader current='Dashboard'/>
+        <SubHeader current='Project Overview'/>
       </Row>
       <Row>
         <Dashboard />
       </Row>
     </Container>
-  </div>
+  </>
   )
 };
 

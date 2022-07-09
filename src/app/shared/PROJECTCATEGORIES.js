@@ -1,100 +1,99 @@
 import { TASKITEMS } from "./TASKITEMS";
 
-
 export const PROJECTCATEGORIES = [
   {
-    projectCategoryId: 0,
-    category: 'General Requirements',
+    id: 0,
+    name: 'General Requirements',
     categoryTasks:  [ TASKITEMS ]
   },
   {
-    projectCategoryId: 1,
-    category: 'Foundation',
+    id: 1,
+    name: 'Foundation',
     categoryTasks: []
   },
   {
-    projectCategoryId: 2,
-    category: 'Site Prep',
+    id: 2,
+    name: 'Site Prep',
     categoryTasks: []
   },
   {
-    projectCategoryId: 3,
-    category: 'On-site Water / Sewage',
+    id: 3,
+    name: 'On-site Water / Sewage',
     categoryTasks: []
   },
   {
-    projectCategoryId: 4,
-    category: 'Porches and Decks',
+    id: 4,
+    name: 'Porches and Decks',
     categoryTasks: []
   },
   {
-    projectCategoryId: 5,
-    category: 'Plumbing',
+    id: 5,
+    name: 'Plumbing',
     categoryTasks: []
   },
   {
-    projectCategoryId: 6,
-    category: 'Electrical',
+    id: 6,
+    name: 'Electrical',
     categoryTasks: []
   },
   {
-    projectCategoryId: 7,
-    category: 'Rough Framing',
+    id: 7,
+    name: 'Rough Framing',
     categoryTasks: []
   },
   {
-    projectCategoryId: 8,
-    category: 'Interior Finish',
+    id: 8,
+    name: 'Interior Finish',
     categoryTasks: []
   },
   {
-    projectCategoryId: 9,
-    category: 'Kitchen and Bath',
+    id: 9,
+    name: 'Kitchen and Bath',
     categoryTasks: []
   },
   {
-    projectCategoryId: 10,
-    category: 'Roofing',
+    id: 10,
+    name: 'Roofing',
     categoryTasks: []
   },
   {
-    projectCategoryId: 11,
-    category: 'HVAC',
+    id: 11,
+    name: 'HVAC',
     categoryTasks: []
   },
   {
-    projectCategoryId: 12,
-    category: 'Windows and Exterior Doors',
+    id: 12,
+    name: 'Windows and Exterior Doors',
     categoryTasks: []
   },
   {
-    projectCategoryId: 13,
-    category: 'Other Masonry, Paving',
+    id: 13,
+    name: 'Other Masonry, Paving',
     categoryTasks: []
   },
   {
-    projectCategoryId: 14,
-    category: 'Excavation and Earthwork',
+    id: 14,
+    name: 'Excavation and Earthwork',
     categoryTasks: []
   },
   {
-    projectCategoryId: 15,
-    category: 'Exterior',
+    id: 15,
+    name: 'Exterior',
     categoryTasks: []
   },
   {
-    projectCategoryId: 16,
-    category: 'Insulation and Air Sealing',
+    id: 16,
+    name: 'Insulation and Air Sealing',
     categoryTasks: []
   },
   {
-    projectCategoryId: 17,
-    category: 'Drywall and Plaster',
+    id: 17,
+    name: 'Drywall and Plaster',
     categoryTasks: []
   },
   {
-    projectCategoryId: 18,
-    category: 'Appliances',
+    id: 18,
+    name: 'Appliances',
     categoryTasks: []
   }
 

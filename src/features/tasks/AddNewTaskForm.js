@@ -14,7 +14,7 @@ const AddNewTaskForm = ( task, onSaveTask ) => {
  
   const saveTask = (e) => {
     e.preventDefault();
-    onSaveTask([{ desc: desc, date: date, projectCategory : projectCategory, complete: false }]);
+    onSaveTask({ desc: desc, date: date, projectCategory : projectCategory, complete: false });
 
     setDesc("");
     setDate("");

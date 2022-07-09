@@ -3,7 +3,7 @@ export const TASKITEMS = [
   {
     id: 0,
     desc: 'Architect',
-    projectCategory: 'General Requirements',
+    projectCategoryId: 0,
     providerCategory: ['Service Provider'],
     vendor: '',
     complete: false,
@@ -12,7 +12,7 @@ export const TASKITEMS = [
    {
     id: 1,
     desc: 'Geotechnical Consultant',
-    projectCategory: 'General Requirements',
+    projectCategoryId: 0,
     providerCategory: ['Service Provider'],
     vendor: '',
     complete: false,
@@ -21,7 +21,7 @@ export const TASKITEMS = [
    {
     id: 2,
     desc: "Builder's Consultant",
-    projectCategory: 'General Requirements',
+    projectCategoryId: 0,
     providerCategory: ['Service Provider'],
     vendor: '',
     complete: false,
@@ -30,7 +30,7 @@ export const TASKITEMS = [
    {
     id: 3,
     desc: 'Mechanical Engineer',
-    projectCategory: 'General Requirements',
+    projectCategoryId: 0,
     providerCategory: ['Service Provider'],
     vendor: '',
     complete: false,
